@@ -11,15 +11,19 @@ Rails.application.routes.draw do
 
   get 'users/index' => 'users', as: :users
 
-  get 'users/show'
+  get 'users/new' => 'users#new', as: :new_user
 
-  get 'users/new' => 'users#new'
+  get 'users/:id' => 'users#show', as: :user
+
+  
 
   get 'users/create'
 
-  get 'users/edit'
+  get 'users/:id/edit' => 'users#edit', as: :edit_user
 
-  get 'users/update'
+ 
+  patch "users/:id" => "users#update"
+  delete "users/:id" => "users#destroy" 
 
   get 'users/destroy'
 
