@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  get 'beers/index'
+
+  get 'beers/show'
+
+  get 'beers/new'
+
+  get 'beers/create'
+
+  get 'beers/destroy'
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/create'
+
+  get 'users/edit'
+
+  get 'users/update'
+
+  get 'users/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
