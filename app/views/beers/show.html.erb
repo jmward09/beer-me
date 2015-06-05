@@ -1,2 +1,4 @@
-<h1>Beers#show</h1>
-<p>Find me in app/views/beers/show.html.erb</p>
+<h1><%= @beer.name %>
+<h4>Brewery: <%= @beer.brewery  %></h4>
+
+<%= link_to "Back", beers_path  %>

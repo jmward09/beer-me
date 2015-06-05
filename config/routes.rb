@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
-  get 'beers/index'
+  get 'beers/index' => 'beers', as: :beers
 
-  get 'beers/show'
+  get 'beers/new' => 'beers#new', as: :new_beer
 
-  get 'beers/new'
+  get 'beers/:id' => 'beers#show', as: :beer
+
+  
+
+  post 'beers/index' => "beers#create"
 
   get 'beers/create'
 
+  delete 'beers/:id' => 'beers#destroy'
+  
   get 'beers/destroy'
 
   get 'users/index' => 'users', as: :users
@@ -14,8 +20,6 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#new', as: :new_user
 
   get 'users/:id' => 'users#show', as: :user
-
-  
 
   get 'users/create'
 

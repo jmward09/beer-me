@@ -1,2 +1,7 @@
-<h1>Beers#index</h1>
-<p>Find me in app/views/beers/index.html.erb</p>
+<h1>Beers</h1>
+<ul>
+  <% @beers.each do |beer| %>
+    <li><%= beer.brewery  %> <%= beer.name %>  <%= link_to "View", beer_path(beer)  %>  <%= link_to "Delete", beer_path(beer), method: :delete, data: { confirm: "Are you sure you want to delete this beer?"} %> </li>
+  <% end %>
+</ul>
+<%= link_to 'Add a Beer', new_beer_path %>
