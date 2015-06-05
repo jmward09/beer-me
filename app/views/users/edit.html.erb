@@ -15,7 +15,20 @@
     <%= f.text_field :location %>
   </div>
   <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  Select the Beers you want!:<br>
+  <%= f.collection_check_boxes :beer_ids, Beer.all, :id, :name %>
+  <br><br>
+  Can't find a beer you're looking for? <%= link_to 'Add it!', new_beer_path %>
+  <div>
     <%= f.submit %>
   </div>
 <% end %>
+
 <%= link_to 'back', user_path(@user)  %>

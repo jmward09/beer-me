@@ -1,2 +1,34 @@
 <h1>Sign Up</h1>
-<%= render 'form' %>
+<%= form_for @user do |f| %>
+<div>
+    <%= f.label :first %>
+    <%= f.text_field :first %>
+    <%= f.label :last %>
+    <%= f.text_field :last %>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  Select the Beers you want!:<br>
+  <%= f.collection_check_boxes :beer_ids, Beer.all, :id, :name %>
+  <br><br>
+  <div>
+    <%= f.submit %>
+  </div>
+  
+<% end %>
+Can't find a beer you're thinking of? <%= link_to 'Add it', new_beer_path %>

@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-      if @user.update_attributes(params.require(:user).permit(:first, :last, :email, :location, :password, :password_confirmation))
+      if @user.update_attributes(params.require(:user).permit(:first, :last, :email, :location, :password, :password_confirmation, beer_ids: []))
         redirect_to users_path
       else
         render :edit
@@ -38,11 +38,13 @@ class UsersController < ApplicationController
 
   def destroy
       @user = User.find(params[:id])
+    #  @beers = Beeruser.find(:conditions => [":user_id = #{params[:id]}"])
       @user.destroy
+      
       redirect_to users_path
   end
 private
   def user_params
-    params.require(:user).permit(:first, :last, :email, :location, :password, :password_confirmation)
+    params.require(:user).permit(:first, :last, :email, :location, :password, :password_confirmation, beer_ids: [])
   end
 end
