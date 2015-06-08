@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
+  before_action :authorized?, only: [:edit, :destroy]
   def index
     @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
+    
   end
 
   def new
@@ -27,6 +29,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    
 
       if @user.update_attributes(params.require(:user).permit(:first, :last, :email, :location, :password, :password_confirmation, beer_ids: []))
         redirect_to users_path

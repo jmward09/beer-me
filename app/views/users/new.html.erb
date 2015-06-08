@@ -23,7 +23,7 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
-  Select the Beers you want!:<br>
+  Select the Beers you have!:<br>
   <%= f.collection_check_boxes :beer_ids, Beer.all, :id, :name %>
   <br><br>
   <div>
