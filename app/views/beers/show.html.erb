@@ -1,7 +1,7 @@
 
 <h1><%= @beer.name %>
 <h4>Brewery: <%= @beer.brewery  %></h4>
-Who wants this?
+Who has this beer?
 <% @beer.users.each do |one_user| %>  
     <%= one_user.first %> <%= one_user.last %><br>
 <% end %>

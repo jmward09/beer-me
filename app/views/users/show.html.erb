@@ -1,7 +1,7 @@
 <h1><%= @user.first + '' + @user.last %>
 <h4>Email Address: <%= @user.email  %></h4>
 <h4>Location: <%= @user.location  %></h4>
-<b>Wants:</b><br>  
+<b>Has:</b><br>  
 <% @user.beers.each do |one_beer| %>  
     <%= one_beer.brewery %> <%= one_beer.name %><br>
 <% end %>
