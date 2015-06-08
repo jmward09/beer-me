@@ -1,9 +1,11 @@
 
 <h1><%= @beer.name %>
 <h4>Brewery: <%= @beer.brewery  %></h4>
-Who has this beer?
+<h5>Who has this beer?<h5>
+<br>
 <% @beer.users.each do |one_user| %>  
     <%= one_user.first %> <%= one_user.last %><br>
 <% end %>
+<br>
 
 <%= link_to "Back", beers_path  %>
