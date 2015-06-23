@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: beer-me_development
+  database: travis_ci_test
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
