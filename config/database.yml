@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: travis_ci_test
-  username: beer-me
-  password: <%= ENV['BEER-ME_DATABASE_PASSWORD'] %>
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
